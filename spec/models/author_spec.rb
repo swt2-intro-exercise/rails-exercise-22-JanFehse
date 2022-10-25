@@ -13,5 +13,13 @@ RSpec.describe Author, type: :model do
     author = Author.new(first_name: "Alan", last_name:"Turing", homepage:"foo")
     expect(author.name).to eq("Alan Turing")
   end
+  
+  it "Model has do be saved" do
+    visit new_author_path
+    page.fill_in 'author[last_name]', with: 'Dijkstra'
+    page.fill_in 'author[first_name]', with: 'Not_found'
+    page.fill_in 'author[homepage]', with: 'This_is_a_website'
+    find('input[type="submit"]').click
 
+  end
 end
