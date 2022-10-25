@@ -8,4 +8,10 @@ RSpec.describe Author, type: :model do
     expect(author.last_name).to eq("Turing")
     expect(author.homepage).to eq("foo")
   end
+
+  it "The model should return the full name unter name" do
+    author = Author.new(first_name: "Alan", last_name:"Turing", homepage:"foo")
+    expect(author.name).to eq("Alan Turing")
+  end
+
 end
