@@ -22,4 +22,10 @@ describe "New author page", type: :feature do
     find('input[type="submit"]').click
   end
 
+  it "Empty Model shows error messages" do
+    visit new_author_path
+    find('input[type="submit"]').click
+    expect(page).to have_text('error')
+  end
+
 end
