@@ -21,4 +21,5 @@ describe "New author page", type: :feature do
     page.fill_in 'author[homepage]', with: 'This_is_a_website'
     find('input[type="submit"]').click
   end
+
 end
