@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Website</th>
+    <th>Homepage</th>
     <th></th>
   </tr>
  
@@ -11,7 +11,8 @@
     <tr>
       <td><%= author.name %></td>
       <td><%= author.homepage %></td>
-      <td><%= link_to 'Show', author_path(author) %></td>
+      <td><%= link_to 'New', author_path(author) %></td>
     </tr>
   <% end %>
+  <%= link_to 'New', new_author_path %>
 </table>
