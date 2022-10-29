@@ -7,5 +7,6 @@ RSpec.describe Paper, type: :model do
     expect(paper.title).to eq("Title")
     expect(paper.venue).to eq("veneu")
     expect(paper.year).to eq(1965)
+    expect(paper.authors).to eq([])
   end
 end
