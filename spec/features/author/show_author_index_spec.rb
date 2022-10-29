@@ -23,6 +23,14 @@ describe "Show author index page", type: :feature do
         expect(page).to have_text('Alan Turing')
         expect(page).to have_text('http://wikipedia.de/Alan_Turing')  
     end
+
+    it "should be possible to delete an Author" do
+        visit authors_path
+        expect(page).to have_text('Delete')
+        @count = Author.count
+        click_link('Delete')
+        expect(Author.count).to eq(@count - 1)
+    end
     
   end
   
