@@ -18,7 +18,7 @@ RSpec.describe "/papers", type: :request do
   # Paper. As you add validations to Paper, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    return {:title => "minTitle", :venue => "venue", :year => 1976}
+    return {:title => "minTitle", :venue => "venue", :year => 1976, :authors => []}
   }
 
   let(:invalid_attributes) {

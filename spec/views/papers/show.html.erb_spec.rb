@@ -5,7 +5,8 @@ RSpec.describe "papers/show", type: :view do
     assign(:paper, Paper.create!(
       title: "Title",
       venue: "Venue",
-      year: 2
+      year: 2,
+      authors: []
     ))
   end
 
