@@ -18,7 +18,7 @@ RSpec.describe "/papers", type: :request do
   # Paper. As you add validations to Paper, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    return {:title => "minTitle", :venue => nil, :year => 1976}
+    return {:title => "minTitle", :venue => "venue", :year => 1976}
   }
 
   let(:invalid_attributes) {
@@ -89,14 +89,16 @@ RSpec.describe "/papers", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        return {:title => "newTitle", :venue => "ven", :year => 1900}
       }
 
       it "updates the requested paper" do
         paper = Paper.create! valid_attributes
         patch paper_url(paper), params: { paper: new_attributes }
         paper.reload
-        skip("Add assertions for updated state")
+        expect(paper.title).to eq("newTitle")
+        expect(paper.venue).to eq("ven")
+        expect(paper.year).to eq(1900)
       end
 
       it "redirects to the paper" do
